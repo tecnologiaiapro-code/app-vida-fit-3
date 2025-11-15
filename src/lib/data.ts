@@ -1,0 +1,245 @@
+// Dados mock para o VivaFit+
+import { Meal, Workout, Exercise, FitnessLevel, CommunityPost, PremiumPlan } from './types';
+
+export const motivationalQuotes = [
+  "Seu único limite é você mesmo!",
+  "Cada dia é uma nova chance de ser melhor.",
+  "O sucesso é a soma de pequenos esforços repetidos.",
+  "Não desista, você está mais perto do que imagina!",
+  "Seu corpo pode fazer qualquer coisa. É sua mente que você precisa convencer.",
+  "A disciplina é a ponte entre objetivos e conquistas.",
+  "Comece onde você está. Use o que você tem. Faça o que você pode.",
+  "O progresso, não a perfeição, é o que importa.",
+];
+
+export const quickMeals: Meal[] = [
+  {
+    id: '1',
+    name: 'Omelete de claras com aveia',
+    calories: 250,
+    protein: 20,
+    carbs: 25,
+    fats: 8,
+    time: '10 min',
+    type: 'breakfast',
+  },
+  {
+    id: '2',
+    name: 'Frango grelhado com batata doce',
+    calories: 450,
+    protein: 40,
+    carbs: 45,
+    fats: 10,
+    time: '20 min',
+    type: 'lunch',
+  },
+  {
+    id: '3',
+    name: 'Salmão com brócolis',
+    calories: 380,
+    protein: 35,
+    carbs: 15,
+    fats: 20,
+    time: '15 min',
+    type: 'dinner',
+  },
+  {
+    id: '4',
+    name: 'Iogurte grego com frutas',
+    calories: 180,
+    protein: 15,
+    carbs: 20,
+    fats: 5,
+    time: '5 min',
+    type: 'snack',
+  },
+  {
+    id: '5',
+    name: 'Wrap integral com atum',
+    calories: 320,
+    protein: 28,
+    carbs: 35,
+    fats: 8,
+    time: '10 min',
+    type: 'lunch',
+  },
+  {
+    id: '6',
+    name: 'Smoothie proteico verde',
+    calories: 220,
+    protein: 25,
+    carbs: 18,
+    fats: 6,
+    time: '5 min',
+    type: 'snack',
+    isPremium: true,
+  },
+];
+
+export const exercises: Exercise[] = [
+  {
+    id: '1',
+    name: 'Flexão de braço',
+    description: 'Exercício completo para peito, ombros e tríceps',
+    duration: 60,
+    calories: 50,
+    level: 'beginner',
+  },
+  {
+    id: '2',
+    name: 'Agachamento',
+    description: 'Fortalece pernas e glúteos',
+    duration: 60,
+    calories: 60,
+    level: 'beginner',
+  },
+  {
+    id: '3',
+    name: 'Prancha',
+    description: 'Fortalece o core e melhora a postura',
+    duration: 60,
+    calories: 40,
+    level: 'beginner',
+  },
+  {
+    id: '4',
+    name: 'Burpee',
+    description: 'Exercício completo de alta intensidade',
+    duration: 60,
+    calories: 80,
+    level: 'intermediate',
+  },
+  {
+    id: '5',
+    name: 'Mountain Climbers',
+    description: 'Cardio intenso e fortalecimento do core',
+    duration: 60,
+    calories: 70,
+    level: 'intermediate',
+  },
+  {
+    id: '6',
+    name: 'Pistol Squat',
+    description: 'Agachamento unilateral avançado',
+    duration: 60,
+    calories: 90,
+    level: 'advanced',
+    isPremium: true,
+  },
+];
+
+export const workouts: Workout[] = [
+  {
+    id: '1',
+    name: 'Treino Rápido 7 Minutos',
+    description: 'Treino completo para quem tem pouco tempo',
+    duration: 7,
+    level: 'beginner',
+    exercises: exercises.slice(0, 3),
+  },
+  {
+    id: '2',
+    name: 'Treino Full Body Iniciante',
+    description: 'Treino completo para iniciantes',
+    duration: 20,
+    level: 'beginner',
+    exercises: exercises.slice(0, 4),
+  },
+  {
+    id: '3',
+    name: 'HIIT Intermediário',
+    description: 'Treino de alta intensidade',
+    duration: 30,
+    level: 'intermediate',
+    exercises: exercises.slice(1, 5),
+  },
+  {
+    id: '4',
+    name: 'Treino Avançado Premium',
+    description: 'Treino completo para atletas',
+    duration: 45,
+    level: 'advanced',
+    exercises: exercises,
+    isPremium: true,
+  },
+];
+
+export const communityPosts: CommunityPost[] = [
+  {
+    id: '1',
+    userId: 'user1',
+    userName: 'Maria Silva',
+    content: 'Completei meu primeiro mês no VivaFit+! Perdi 3kg e me sinto incrível! 💪',
+    likes: 45,
+    comments: 12,
+    timestamp: '2024-01-15T10:30:00Z',
+  },
+  {
+    id: '2',
+    userId: 'user2',
+    userName: 'João Santos',
+    content: 'Dica: O treino de 7 minutos é perfeito para começar o dia com energia!',
+    likes: 32,
+    comments: 8,
+    timestamp: '2024-01-15T09:15:00Z',
+  },
+  {
+    id: '3',
+    userId: 'user3',
+    userName: 'Ana Costa',
+    content: 'Alguém tem receitas saudáveis para o jantar? Preciso de ideias! 🥗',
+    likes: 28,
+    comments: 15,
+    timestamp: '2024-01-15T08:00:00Z',
+  },
+];
+
+export const premiumPlans: PremiumPlan[] = [
+  {
+    id: '1',
+    name: 'Mensal',
+    duration: 'monthly',
+    price: 29.90,
+    features: [
+      'Treinos exclusivos',
+      'Plano alimentar personalizado',
+      'Acesso ilimitado à comunidade',
+      'Relatórios avançados',
+      'Receitas Premium',
+      'Suporte prioritário',
+    ],
+  },
+  {
+    id: '2',
+    name: 'Trimestral',
+    duration: 'quarterly',
+    price: 69.90,
+    features: [
+      'Todos os benefícios do plano mensal',
+      'Economize 22%',
+      'Desafios exclusivos',
+      'Consultoria nutricional',
+    ],
+  },
+  {
+    id: '3',
+    name: 'Anual',
+    duration: 'yearly',
+    price: 199.90,
+    features: [
+      'Todos os benefícios do plano mensal',
+      'Economize 44%',
+      'Acesso vitalício a conteúdos',
+      'Consultoria fitness personalizada',
+      'Grupo VIP no WhatsApp',
+    ],
+  },
+];
+
+export const shoppingList = [
+  { category: 'Proteínas', items: ['Frango', 'Ovos', 'Atum', 'Salmão', 'Iogurte grego'] },
+  { category: 'Carboidratos', items: ['Batata doce', 'Aveia', 'Arroz integral', 'Pão integral'] },
+  { category: 'Vegetais', items: ['Brócolis', 'Espinafre', 'Tomate', 'Alface', 'Cenoura'] },
+  { category: 'Frutas', items: ['Banana', 'Maçã', 'Morango', 'Abacate', 'Laranja'] },
+  { category: 'Outros', items: ['Azeite', 'Temperos', 'Castanhas', 'Whey protein'] },
+];
